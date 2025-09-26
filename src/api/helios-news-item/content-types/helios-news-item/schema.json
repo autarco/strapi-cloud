@@ -25,11 +25,15 @@
       "required": true
     },
     "contents": {
-      "type": "blocks",
+      "type": "customField",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
+      },
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "Minimal HTML"
       },
       "required": true
     },
@@ -53,14 +57,6 @@
       "allowedTypes": [
         "images"
       ]
-    },
-    "news": {
-      "type": "richtext",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
     }
   }
 }

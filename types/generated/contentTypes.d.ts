@@ -555,8 +555,14 @@ export interface ApiHeliosNewsItemHeliosNewsItem
     };
   };
   attributes: {
-    contents: Schema.Attribute.Blocks &
+    contents: Schema.Attribute.RichText &
       Schema.Attribute.Required &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'Minimal HTML';
+        }
+      > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -583,12 +589,6 @@ export interface ApiHeliosNewsItemHeliosNewsItem
       'oneToMany',
       'api::helios-news-item.helios-news-item'
     >;
-    news: Schema.Attribute.RichText &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
